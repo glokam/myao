@@ -1,0 +1,22 @@
+{
+  "name": "myao",
+  "version": "1.0.0",
+  "description": "Manage Your Array of Objects",
+  "main": "myao.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/glokam/myao.git"
+  },
+  "keywords": [
+    "Array"
+  ],
+  "author": "Kamil Głowacki",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/glokam/myao/issues"
+  },
+  "homepage": "https://github.com/glokam/myao#readme"
+}
