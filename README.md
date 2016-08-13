@@ -24,9 +24,8 @@ var myao = require('myao'),
 
 var myaoObj = myao.create(arrayofobj);
 ```
-### Syntax
 
-#### getAll
+### getAll
 
 > myaoObj.getAll()
 
@@ -44,7 +43,7 @@ myaoObj.getAll();
 */
 ```
 
-#### add
+### add
 
 > myaoObj.add(*toAdd*)
 
@@ -69,7 +68,7 @@ myaoObj.add([{name: 'Bill', team: 'Black', age:23, id: '006'}, {name: 'Sue', tea
 */
 ```
 
-#### get
+### get
 
 > myaoObj.get(*key*, *id*)
 
@@ -77,7 +76,7 @@ myaoObj.add([{name: 'Bill', team: 'Black', age:23, id: '006'}, {name: 'Sue', tea
 
 **id** - *unique value*
 
-**return** - ***first** matching object*
+**return** - *first matching object*
 
 ```
 
@@ -93,7 +92,7 @@ blackbill.team //'Blue'
 
 ```
 
-#### remove
+### remove
 
 > myaoObj.remove(*key*, *id*)
 
@@ -120,7 +119,7 @@ myaoObj.remove('id', '006');
 */
 ```
 
-#### filter
+### filter
 
 > myaoObj.filter(*key*, *val*);
 
@@ -150,7 +149,7 @@ var notblue = myaoObj.filter('-team', 'Blue');
 */
 ```
 
-#### sort
+### sort
 
 > myaoObj.sort(*key*);
 
@@ -184,7 +183,7 @@ myaoObj.sort('-age');
   */
 ```
 
-#### getValues
+### getValues
 
 > myaoObj.getValues(*key*)
 
@@ -199,7 +198,7 @@ console.log(names); //[ 'Johnny', 'Simon', 'Leonardo', 'Don', 'Bill', 'Sue' ]
 
 ```
 
-#### getLength
+### getLength
 
 > myaoObj.getLength()
 
