@@ -4,6 +4,16 @@
 ### Getting started:
 
 ```
+npm install myao
+
+//or
+
+npm install --save myao
+```
+
+
+
+```
 var myao = require('myao'),
     arrayofobj = [
     {name: 'Johnny', team: 'Black', age:28, id: '001'},
@@ -15,6 +25,9 @@ var myao = require('myao'),
 var myaoObj = myao.create(arrayofobj);
 ```
 ### Syntax
+
+#### getAll
+
 > myaoObj.getAll()
 
 **return** - *array*
@@ -31,6 +44,7 @@ myaoObj.getAll();
 */
 ```
 
+#### add
 
 > myaoObj.add(*toAdd*)
 
@@ -55,6 +69,8 @@ myaoObj.add([{name: 'Bill', team: 'Black', age:23, id: '006'}, {name: 'Sue', tea
 */
 ```
 
+#### get
+
 > myaoObj.get(*key*, *id*)
 
 **key** - *string - object key*
@@ -76,6 +92,8 @@ var blackbill = myaoObj.get('name', 'Bill' );
 blackbill.team //'Blue'
 
 ```
+
+#### remove
 
 > myaoObj.remove(*key*, *id*)
 
@@ -101,6 +119,8 @@ myaoObj.remove('id', '006');
 { name: 'Sue', team: 'White', age: 20, id: '007' } ]
 */
 ```
+
+#### filter
 
 > myaoObj.filter(*key*, *val*);
 
@@ -129,6 +149,8 @@ var notblue = myaoObj.filter('-team', 'Blue');
   { name: 'Sue', team: 'White', age: 20, id: '007' } ]
 */
 ```
+
+#### sort
 
 > myaoObj.sort(*key*);
 
@@ -162,6 +184,8 @@ myaoObj.sort('-age');
   */
 ```
 
+#### getValues
+
 > myaoObj.getValues(*key*)
 
 **key** - *string - object key* ; 'use '-' for revers sort
@@ -174,6 +198,8 @@ var names = myaoObj.getValues('name');
 console.log(names); //[ 'Johnny', 'Simon', 'Leonardo', 'Don', 'Bill', 'Sue' ]
 
 ```
+
+#### getLength
 
 > myaoObj.getLength()
 
