@@ -1,6 +1,6 @@
 {
   "name": "myao",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Manage Your Array of Objects",
   "main": "myao.js",
   "scripts": {
@@ -11,7 +11,10 @@
     "url": "git+https://github.com/glokam/myao.git"
   },
   "keywords": [
-    "Array"
+    "array",
+    "filter",
+    "sort",
+    "array of objects"
   ],
   "author": "Kamil Głowacki",
   "license": "MIT",

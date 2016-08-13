@@ -106,7 +106,18 @@ sort: function (key) {
         return result * order;
     })
     return this;
-},    
+},
+    
+each: function (callback) {
+    var leng = this.getLength(), 
+        data = this.data, i;
+        values = [];  
+    for (i = 0; i < leng; i++) {
+      callback(data[i], i);   
+    }
+    return this;
+},//end of each method
+    
 getAll: function () {
     return this.data;
 },//end of getAll method

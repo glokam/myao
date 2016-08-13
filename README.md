@@ -11,8 +11,6 @@ npm install myao
 npm install --save myao
 ```
 
-
-
 ```
 var myao = require('myao'),
     arrayofobj = [
@@ -30,6 +28,7 @@ var myaoObj = myao.create(arrayofobj);
 > myaoObj.getAll()
 
 **return** - *array*
+
 ```
 myaoObj.getAll();
 
@@ -79,7 +78,6 @@ myaoObj.add([{name: 'Bill', team: 'Black', age:23, id: '006'}, {name: 'Sue', tea
 **return** - *first matching object*
 
 ```
-
 var blackbill = myaoObj.get('id', '006' )
 
 blackbill.team //'Black'
@@ -89,7 +87,6 @@ blackbill.team //'Black'
 var blackbill = myaoObj.get('name', 'Bill' );
 
 blackbill.team //'Blue'
-
 ```
 
 ### remove
@@ -105,7 +102,6 @@ blackbill.team //'Blue'
 !! It removes FIRST matching object - to remove a group of objects use filter method 
 
 ```
-
 myaoObj.remove('id', '006');
 
 /* myaoObj.getAll() return
@@ -130,7 +126,6 @@ myaoObj.remove('id', '006');
 **return** - new myao object with filtered data
 
 ```
-
 var bluered = myaoObj.filter('team', ['Blue', 'Red']);
 
 var notblue = myaoObj.filter('-team', 'Blue');
@@ -183,6 +178,27 @@ myaoObj.sort('-age');
   */
 ```
 
+### each  *v. 1.1.0 =>*
+
+> myaoObj.each(*callback*)
+
+**callback** - *function with two parameters; first it is object in array, and second is index*
+
+```
+myaoObj.each (function (elem, index) {
+    elem.nick = elem.name.substr(0,2) + index; 
+});
+
+/* myObj.getAll() return
+[ { name: 'Johnny', team: 'Black', age: 28, id: '001', nick: 'Jo0' },
+  { name: 'Simon', team: 'Red', age: 32, id: '002', nick: 'Si1' },
+  { name: 'Leonardo', team: 'Blue', age: 18, id: '003', nick: 'Le2' },
+  { name: 'Don', team: 'White', age: 40, id: '004', nick: 'Do3' },
+  { name: 'Bill', team: 'Blue', age: 26, id: '005', nick: 'Bi4' },
+  { name: 'Sue', team: 'White', age: 20, id: '007', nick: 'Su5' } ]
+*/
+```
+
 ### getValues
 
 > myaoObj.getValues(*key*)
@@ -195,7 +211,6 @@ myaoObj.sort('-age');
 var names = myaoObj.getValues('name');
 
 console.log(names); //[ 'Johnny', 'Simon', 'Leonardo', 'Don', 'Bill', 'Sue' ]
-
 ```
 
 ### getLength
@@ -208,5 +223,4 @@ console.log(names); //[ 'Johnny', 'Simon', 'Leonardo', 'Don', 'Bill', 'Sue' ]
 var myaolength = myaoObj.getLength();
 
 console.log(myaolength); // 6
-
 ```
