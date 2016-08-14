@@ -114,6 +114,21 @@ myaoObj.remove('id', '006');
 { name: 'Sue', team: 'White', age: 20, id: '007' } ]
 */
 ```
+### overwrite *v. 1.2.0 =>*
+
+>myaoObj.overwrite(*newData*);
+
+**newData** - *array*
+
+**return** - *myao object with new data*
+
+```
+myaoObj.overwrite([{name: "Peter", team:"Green"}]);
+
+/* myaoObj.getAll() return
+[{name: "Peter", team:"Green"}]
+*/
+```
 
 ### filter
 
@@ -212,7 +227,6 @@ var names = myaoObj.getValues('name');
 
 console.log(names); //[ 'Johnny', 'Simon', 'Leonardo', 'Don', 'Bill', 'Sue' ]
 ```
-
 ### getLength
 
 > myaoObj.getLength()

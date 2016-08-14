@@ -11,7 +11,7 @@ var Myao = function (data) {
 };
 
 Myao.prototype = {
-    
+ 
 add: function (toAdd) {
     if (Array.isArray(toAdd)) {
         console.log('ok')
@@ -32,7 +32,13 @@ remove: function (key, id) {
     };
     return this;
 },//end of remove method   
-    
+overwrite: function (newData) {
+    if (!(Array.isArray(newData))) {
+       throw new Error('Wrong typeof parameter in update method . Should be an array.');
+    } 
+    this.data = newData;
+    return this;
+},       
 get: function (key, id) {
     var leng = this.getLength(), 
         data = this.data, i;
