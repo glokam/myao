@@ -120,7 +120,7 @@ myaoObj.remove('id', '006');
 
 **newData** - *array*
 
-**return** - *myao object with new data*
+**return** - *this*
 
 ```
 myaoObj.overwrite([{name: "Peter", team:"Green"}]);
