@@ -4,11 +4,16 @@
 ### Getting started:
 
 ```
-<script src='myao.js'></script>
+npm install myao
+
+//or
+
+npm install --save myao
 ```
 
 ```
-var arrayofobj = [
+var myao = require('myao'),
+    arrayofobj = [
     {name: 'Johnny', team: 'Black', age:28, id: '001'},
     {name: 'Simon', team: 'Red', age:32, id: '002'},
     {name: 'Leonardo', team: 'Blue', age: 18, id: '003'},
