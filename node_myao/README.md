@@ -114,7 +114,7 @@ myaoObj.remove('id', '006');
 { name: 'Sue', team: 'White', age: 20, id: '007' } ]
 */
 ```
-### overwrite *v. 1.2.0 =>*
+### overwrite *>= 1.2.0*
 
 >myaoObj.overwrite(*newData*);
 
@@ -193,7 +193,7 @@ myaoObj.sort('-age');
   */
 ```
 
-### each  *v. 1.1.0 =>*
+### each  *>= 1.1.0*
 
 > myaoObj.each(*callback*)
 
