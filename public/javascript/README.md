@@ -4,16 +4,15 @@
 ### Getting started:
 
 ```
-npm install myao
+<script src='myao.js'></script>
 
-//or
+//or CDN:
 
-npm install --save myao
+<script src='https://cdn.rawgit.com/glokam/myao/737ac376504a9f7cb0440f0b6cc2579f50898a04/myao.min.js'></sript>
 ```
 
 ```
-var myao = require('myao'),
-    arrayofobj = [
+var arrayofobj = [
     {name: 'Johnny', team: 'Black', age:28, id: '001'},
     {name: 'Simon', team: 'Red', age:32, id: '002'},
     {name: 'Leonardo', team: 'Blue', age: 18, id: '003'},
@@ -114,7 +113,7 @@ myaoObj.remove('id', '006');
 { name: 'Sue', team: 'White', age: 20, id: '007' } ]
 */
 ```
-### overwrite *>= 1.2.0*
+### overwrite *v. 1.2.0 =>*
 
 >myaoObj.overwrite(*newData*);
 
@@ -193,7 +192,7 @@ myaoObj.sort('-age');
   */
 ```
 
-### each  *>= 1.1.0*
+### each  *v. 1.1.0 =>*
 
 > myaoObj.each(*callback*)
 

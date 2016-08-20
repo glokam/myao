@@ -1,18 +1,23 @@
 # myao =^_^=
 ## Manage Your Array of Objects
 
+[![Latest Stable Version](https://img.shields.io/npm/v/myao.svg)](https://www.npmjs.com/package/myao)
+[![License](https://img.shields.io/npm/l/myao.svg)](https://www.npmjs.com/package/myao)
+[![NPM Downloads](https://img.shields.io/npm/dm/myao.svg)](https://www.npmjs.com/package/myao)
+
 ### Getting started:
 
 ```
-<script src='myao.js'></script>
+npm install myao
 
-//or CDN:
+//or
 
-<script src='https://cdn.rawgit.com/glokam/myao/737ac376504a9f7cb0440f0b6cc2579f50898a04/myao.min.js'></sript>
+npm install --save myao
 ```
 
 ```
-var arrayofobj = [
+var myao = require('myao'),
+    arrayofobj = [
     {name: 'Johnny', team: 'Black', age:28, id: '001'},
     {name: 'Simon', team: 'Red', age:32, id: '002'},
     {name: 'Leonardo', team: 'Blue', age: 18, id: '003'},
@@ -113,7 +118,7 @@ myaoObj.remove('id', '006');
 { name: 'Sue', team: 'White', age: 20, id: '007' } ]
 */
 ```
-### overwrite *v. 1.2.0 =>*
+### overwrite *>= 1.2.0*
 
 >myaoObj.overwrite(*newData*);
 
@@ -192,7 +197,7 @@ myaoObj.sort('-age');
   */
 ```
 
-### each  *v. 1.1.0 =>*
+### each  *>= 1.1.0*
 
 > myaoObj.each(*callback*)
 
