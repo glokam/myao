@@ -142,4 +142,4 @@
     myao.create = function (data) {
         return new Myao(data);
     };
-}))
+}));
