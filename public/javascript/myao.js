@@ -1,4 +1,7 @@
-(function(global) {
+(function(global, factory) {
+   factory(global.myao = {});
+}(this, function (myao) {
+    
     var Myao = function (data) {
         if (!(Array.isArray(data)) && data !== undefined) {
             throw new Error('Wrong typeof parameter in Myao.create . Should be an array or undefined for empty object');
@@ -135,8 +138,8 @@
     
     };//end of Myao.prototype
     
-    global.myao = {};
+    //Public methods
     myao.create = function (data) {
         return new Myao(data);
-    };    
-}(this))
+    };
+}))
