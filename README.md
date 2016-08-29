@@ -7,7 +7,7 @@
 
 ### Getting started:
 
-```
+```js
 npm install myao
 
 //or
@@ -15,7 +15,7 @@ npm install myao
 npm install --save myao
 ```
 
-```
+```js
 var myao = require('myao'),
     arrayofobj = [
     {name: 'Johnny', team: 'Black', age:28, id: '001'},
@@ -33,7 +33,7 @@ var myaoObj = myao.create(arrayofobj);
 
 **return** - *array*
 
-```
+```js
 myaoObj.getAll();
 
 /* return
@@ -54,7 +54,7 @@ myaoObj.getAll();
 
 **return** - *this*
 
-```
+```js
 myaoObj.add({name: 'Bill', team: 'Blue', age:26, id: '005'});
 myaoObj.add([{name: 'Bill', team: 'Black', age:23, id: '006'}, {name: 'Sue', team: 'White', age:20, id: '007'}]);
 
@@ -81,7 +81,7 @@ myaoObj.add([{name: 'Bill', team: 'Black', age:23, id: '006'}, {name: 'Sue', tea
 
 **return** - *first matching object*
 
-```
+```js
 var blackbill = myaoObj.get('id', '006' )
 
 blackbill.team //'Black'
@@ -105,7 +105,7 @@ blackbill.team //'Blue'
 
 !! It removes FIRST matching object - to remove a group of objects use filter method 
 
-```
+```js
 myaoObj.remove('id', '006');
 
 /* myaoObj.getAll() return
@@ -126,7 +126,7 @@ myaoObj.remove('id', '006');
 
 **return** - *this*
 
-```
+```js
 myaoObj.overwrite([{name: "Peter", team:"Green"}]);
 
 /* myaoObj.getAll() return
@@ -144,7 +144,7 @@ myaoObj.overwrite([{name: "Peter", team:"Green"}]);
 
 **return** - new myao object with filtered data
 
-```
+```js
 var bluered = myaoObj.filter('team', ['Blue', 'Red']);
 
 var notblue = myaoObj.filter('-team', 'Blue');
@@ -171,7 +171,7 @@ var notblue = myaoObj.filter('-team', 'Blue');
 
 **return** - *this*
 
-```
+```js
 myaoObj.sort('age');
 
 /* myaoObj.getAll() return
@@ -203,7 +203,7 @@ myaoObj.sort('-age');
 
 **callback** - *function with two parameters; first it is object in array, and second is index*
 
-```
+```js
 myaoObj.each (function (elem, index) {
     elem.nick = elem.name.substr(0,2) + index; 
 });
@@ -226,7 +226,7 @@ myaoObj.each (function (elem, index) {
 
 **return** - *array with values*
 
-```
+```js
 var names = myaoObj.getValues('name');
 
 console.log(names); //[ 'Johnny', 'Simon', 'Leonardo', 'Don', 'Bill', 'Sue' ]
@@ -237,7 +237,7 @@ console.log(names); //[ 'Johnny', 'Simon', 'Leonardo', 'Don', 'Bill', 'Sue' ]
 
 **return** - *number - data length*
 
-```
+```js
 var myaolength = myaoObj.getLength();
 
 console.log(myaolength); // 6

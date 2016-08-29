@@ -1,6 +1,6 @@
 {
   "name": "myao",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "Manage Your Array of Objects",
   "main": "./lib/myao.js",
   "scripts": {
