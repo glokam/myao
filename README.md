@@ -156,7 +156,7 @@ myaoObj.remove('id', '006');
 ```
 ### replace *>= 1.3.0*
 
-> myaoObj.set(*key*, *id*, *obj*)
+> myaoObj.replace(*key*, *id*, *obj*)
 
 **key** - *string - object key*
 
