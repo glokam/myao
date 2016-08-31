@@ -79,7 +79,7 @@ myaoObj.add([{name: 'Bill', team: 'Black', age:23, id: '006'}, {name: 'Sue', tea
 
 **id** - *unique value*
 
-**return** - *first matching object*
+**return** - *first matching object or null*
 
 ```js
 var blackbill = myaoObj.get('id', '006' )
@@ -92,7 +92,43 @@ var blackbill = myaoObj.get('name', 'Bill' );
 
 blackbill.team //'Blue'
 ```
+__*!! This method return object reference so if you*__
+```js
+var blackbill = myaoObj.get('id', '006' );
+blackbill.hobby = 'country music';
 
+/* myaoObj.getAll() return:
+[ 
+{ name: 'Johnny', team: 'Black', age:28, id: '001'},
+{ name: 'Simon', team: 'Red', age:32, id: '002'},
+{ name: 'Leonardo', team: 'Blue', age: 18, id: '003'},
+{ name: 'Don', team: 'White', age:40, id: '004'},
+{ name: 'Bill', team: 'Blue', age: 26, id: '005' },
+{ name: 'Bill', team: 'Black', age: 23, id: '006', hobby: 'country music' },
+{ name: 'Sue', team: 'White', age: 20, id: '007' }
+]
+*/
+```
+### set *>= 1.3.0*
+
+> myaoObj.set(*key*, *id*, *obj*)
+
+**key** - *string - object key*
+
+**id** - *unique value*
+
+**obj** - *object with propertys to assign*
+
+**return** - *this*
+
+```js
+var bluebill = myaoObj.get('id', '005' );
+
+myaoObj.set('id', '005', {job: 'Programmer'});
+
+console.log(bluebill)
+//{ name: 'Bill', team: 'Blue', age: 26, id: '005', job: 'Programmer' }
+```
 ### remove
 
 > myaoObj.remove(*key*, *id*)
@@ -115,6 +151,36 @@ myaoObj.remove('id', '006');
 { name: 'Leonardo', team: 'Blue', age: 18, id: '003' },
 { name: 'Don', team: 'White', age: 40, id: '004' },
 { name: 'Bill', team: 'Blue', age: 26, id: '005' },
+{ name: 'Sue', team: 'White', age: 20, id: '007' } ]
+*/
+```
+### replace *>= 1.3.0*
+
+> myaoObj.set(*key*, *id*, *obj*)
+
+**key** - *string - object key*
+
+**id** - *unique value*
+
+**obj** - *object with propertys to assign*
+
+**return** - *this*
+
+```js
+var bluebill = myaoObj.get('id', '005' );
+
+myaoObj.set('id', '005', {name: 'Anonymous'});
+
+console.log(bluebill)
+//{ name: 'Anonymous'}
+
+/* myaoObj.getAll() return
+[ 
+{ name: 'Johnny', team: 'Black', age: 28, id: '001' },
+{ name: 'Simon', team: 'Red', age: 32, id: '002' },
+{ name: 'Leonardo', team: 'Blue', age: 18, id: '003' },
+{ name: 'Don', team: 'White', age: 40, id: '004' },
+{ name: 'Anonymous' },
 { name: 'Sue', team: 'White', age: 20, id: '007' } ]
 */
 ```

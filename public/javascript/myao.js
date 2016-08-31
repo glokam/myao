@@ -2,6 +2,13 @@
    factory(global.myao = {});
 }(this, function (myao) {
     
+    function extend(target, obj){
+        for(var key in obj)
+            if(hasOwn.call(obj, key)) target[key] = obj[key];
+        return target;
+    }
+    
+    
     var Myao = function (data) {
         if (!(Array.isArray(data)) && data !== undefined) {
             throw new Error('Wrong typeof parameter in Myao.create . Should be an array or undefined for empty object');
@@ -37,7 +44,7 @@
         },//end of remove method   
         overwrite: function (newData) {
             if (!(Array.isArray(newData))) {
-                throw new Error('Wrong typeof parameter in update method . Should be an array.');
+                throw new Error('Wrong typeof parameter in overwrite method . Should be an array.');
             } 
             this.data = newData;
             return this;
@@ -50,7 +57,30 @@
             }
             return null;
         },//end of get method
-    
+        set: function (key, id, obj) {
+          var target = this.get(key, id); 
+
+            if (!target) return this;
+            
+            extend(target, obj);
+            
+            return this;
+        },//end of set method
+
+        replace: function (key, id, obj) {
+            var hasOwn = Object.prototype.hasOwnProperty, 
+                target = this.get(key, id);
+
+            if (!target) return this;
+
+            for (var prop in target) {
+                if (hasOwn.call(target, prop)) delete target[prop];
+            }
+
+            extend(target, obj);
+
+            return this;
+        },//end of replace method
         getValues: function (key) {
             var leng = this.getLength(), 
                 data = this.data, i,
