@@ -92,7 +92,7 @@ var blackbill = myaoObj.get('name', 'Bill' );
 
 blackbill.team //'Blue'
 ```
-__*!! This method return object reference so if you*__
+__*!! This method return object reference so:*__
 ```js
 var blackbill = myaoObj.get('id', '006' );
 blackbill.hobby = 'country music';

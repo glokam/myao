@@ -8,7 +8,7 @@
 
 //or CDN:
 
-<script src='https://cdn.rawgit.com/glokam/myao/737ac376504a9f7cb0440f0b6cc2579f50898a04/myao.min.js'></sript>
+<script src='https://cdn.rawgit.com/glokam/myao/51958d1bdb6a5ce1f981d144f17aec9558a95ca1/public/javascript/myao.min.js'></sript>
 ```
 
 ```
