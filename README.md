@@ -169,9 +169,9 @@ myaoObj.remove('id', '006');
 ```js
 var bluebill = myaoObj.get('id', '005' );
 
-myaoObj.set('id', '005', {name: 'Anonymous'});
+myaoObj.replace('id', '005', {name: 'Anonymous'});
 
-console.log(bluebill)
+console.log(bluebill);
 //{ name: 'Anonymous'}
 
 /* myaoObj.getAll() return
