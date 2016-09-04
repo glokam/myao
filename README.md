@@ -48,9 +48,11 @@ myaoObj.getAll();
 
 ### add
 
-> myaoObj.add(*toAdd*)
+> myaoObj.add(*toAdd*, *toTheBeginning*)
 
 **toAdd** - *single object* or *array of objects*
+
+**toTheBeginning** >= 1.3.2 - *boolean* - true for 'add' to the beginning of data;
 
 **return** - *this*
 
@@ -60,6 +62,21 @@ myaoObj.add([{name: 'Bill', team: 'Black', age:23, id: '006'}, {name: 'Sue', tea
 
 /* myaoObj.getAll() return:
 [ 
+{ name: 'Johnny', team: 'Black', age:28, id: '001'},
+{ name: 'Simon', team: 'Red', age:32, id: '002'},
+{ name: 'Leonardo', team: 'Blue', age: 18, id: '003'},
+{ name: 'Don', team: 'White', age:40, id: '004'},
+{ name: 'Bill', team: 'Blue', age: 26, id: '005' },
+{ name: 'Bill', team: 'Black', age: 23, id: '006' },
+{ name: 'Sue', team: 'White', age: 20, id: '007' }
+]
+*/
+
+myaoObj.add({name: 'Peggy', team: 'Pink', age:21, id: '008'}, true);
+
+/* myaoObj.getAll() return:
+[
+{name: 'Peggy', team: 'Pink', age:21, id: '008'},
 { name: 'Johnny', team: 'Black', age:28, id: '001'},
 { name: 'Simon', team: 'Red', age:32, id: '002'},
 { name: 'Leonardo', team: 'Blue', age: 18, id: '003'},
