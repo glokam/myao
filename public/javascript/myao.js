@@ -23,14 +23,22 @@
 
     Myao.prototype = {
  
-        add: function (toAdd) {
+        add: function (toAdd, atBeginning) {
             if (Array.isArray(toAdd)) {
-                this.data = this.data.concat(toAdd);
+                if (!atBeginning) {
+                    this.data = this.data.concat(toAdd);
+                } else {
+                    this.data = toAdd.concat(this.data);
+                };
             } else {
-                this.data.push(toAdd);
+                if (!atBeginning) { 
+                    this.data.push(toAdd) ;
+                } else { 
+                    this.data.unshift(toAdd);
+                }
             }
             return this;
-        },//end of add method
+        }, //end of add method
         remove: function (key, id) {
             var leng = this.getLength(), 
                 data = this.data, i;
