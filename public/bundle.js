@@ -738,7 +738,7 @@ Myao.prototype = {
 			newData = [],
 			reverse = false,
 			statemant,
-			i;
+			i, j;
 
 		if ( key.charAt( 0 ) === '-' ) {
 			reverse = true;
@@ -750,52 +750,59 @@ Myao.prototype = {
 			if ( reverse ) {
 				if ( Array.isArray( val ) ) {
 					statemant = true;
-					for ( var j = 0; j < val.length; j++ ) {
+					for ( j = 0; j < val.length; j++ ) {
 						if ( data[ i ][ key ] === val[ j ] ) {
 							statemant = false;
 							break;
 						}
 					}
 					if ( statemant ) {
-						newData.push( data[ i ] )
+						newData.push( data[ i ] );
 					}
 				} else {
-					if( data[ i ][ key ] !== val ) newData.push( data[ i ] );
+					if ( data[ i ][ key ] !== val ) {
+						newData.push( data[ i ] );
+					} else {
+						continue;
+					}
 				}
 			} else {
 				if ( Array.isArray( val ) ) {
-	                for ( var j = 0; j < val.length; j++ ) {
-	                    if( data[ i ][ key ] === val[ j ] ) {
-	                        newData.push( data[ i ] );
-	                        break;
-	                    }
-	                }
-	            } else {
-	                if( data[ i ][ key ] === val ) newData.push( data[ i ] );
-	            }
-	        }
-	    };
-	    return new Myao( newData );
-	},//end of filter method
+					for ( j = 0; j < val.length; j++ ) {
+						if ( data[ i ][ key ] === val[ j ] ) {
+							newData.push( data[ i ] );
+							break;
+						}
+					}
+				} else {
+					if ( data[ i ][ key ] === val ) {
+						newData.push( data[ i ] );
+					} else {
+						continue;
+					}
+				}
+			}
+		}
+		return new Myao( newData );
+	},
 	sort,
-	each ( callback ) {
-    var leng = this.getLength(),
-        data = this.data, i;
-        values = [];
-    for (i = 0; i < leng; i++) {
-      callback(data[i], i);
-    }
-    return this;
-},//end of each method
-	getAll () {
-    return this.data;
-},//end of getAll method
-	getLength () {
-    return this.data.length;
-}//end of getLength
-};//end of Myao.prototype
+	each( callback ) {
+		var leng = this.getLength(),
+			data = this.data, i;
+		for ( i = 0; i < leng; i++ ) {
+			callback( data[ i ], i );
+		}
+		return this;
+	},
+	getAll() {
+		return this.data;
+	},
+	getLength() {
+		return this.data.length;
+	}
+};
 
-exports.create = function ( data ) {
+exports.create = function( data ) {
 	return new Myao( data );
 };
 
@@ -1062,29 +1069,41 @@ if (typeof Object.create === 'function') {
 /* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(module, __filename) {const util = __webpack_require__(1);
-const config = __webpack_require__(2);
+/* WEBPACK VAR INJECTION */(function(module, __filename) {const util = __webpack_require__( 1 );
+const config = __webpack_require__( 2 );
 
-if ( __webpack_require__.c[__webpack_require__.s] === module){ throw new Error( util.format(config.err.req, __filename) )};
+if ( __webpack_require__.c[__webpack_require__.s] === module ) {
+	throw new Error( util.format( config.err.req, __filename ) );
+}
 
-function add (toAdd, atBeginning) {
-    if (Array.isArray(toAdd)) {
-        if (!atBeginning) {
-            this.data = this.data.concat(toAdd);
-        } else {
-            this.data = toAdd.concat(this.data);
-        };
-    } else {
-        if (!atBeginning) { 
-            this.data.push(toAdd) ;
-        } else { 
-            this.data.unshift(toAdd);
-        }
-    }
-    return this;
-};
+function _concatData( toAdd, data, atBeginning ) {
+	if ( !atBeginning ) {
+		data = data.concat( toAdd );
+	} else {
+		data = toAdd.concat( data );
+	}
+	return data;
+}
+
+function _pushData( toAdd, data, atBeginning ) {
+	if ( !atBeginning ) {
+		data.push( toAdd ) ;
+	} else {
+		data.unshift( toAdd );
+	}
+}
+
+function add( toAdd, atBeginning ) {
+	if ( Array.isArray( toAdd ) ) {
+		this.data = _concatData( toAdd, this.data, atBeginning );
+	} else {
+		_pushData( toAdd, this.data, atBeginning );
+	}
+	return this;
+}
 
 module.exports = add;
+
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)(module), "/index.js"))
 
 /***/ }),
