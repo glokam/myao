@@ -1110,24 +1110,28 @@ module.exports = add;
 /* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(module, __filename) {const util = __webpack_require__(1);
-const config = __webpack_require__(2);
+/* WEBPACK VAR INJECTION */(function(module, __filename) {const util = __webpack_require__( 1 );
+const config = __webpack_require__( 2 );
 
-if ( __webpack_require__.c[__webpack_require__.s] === module){ throw new Error( util.format(config.err.req, __filename) )};
+if ( __webpack_require__.c[__webpack_require__.s] === module ){
+	throw new Error( util.format( config.err.req, __filename ) );
+}
 
-function remove(key, id) {
-    var leng = this.getLength(), 
-        data = this.data, i;
-    for (i = 0; i < leng; i++) {
-      if(data[i][key] === id) {
-          this.data.splice(i, 1);
-          break;
-      }  
-    };
-    return this;
-};
+function remove( key, id ) {
+	var leng = this.getLength(),
+		data = this.data, i;
+
+	for ( i = 0; i < leng; i++ ) {
+		if ( data[ i ][ key ] === id ) {
+			this.data.splice( i, 1 );
+			break;
+		}
+	}
+	return this;
+}
 
 module.exports = remove;
+
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)(module), "/index.js"))
 
 /***/ }),

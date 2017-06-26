@@ -8,12 +8,13 @@ module.exports = {
 	},
 	module: {
 		rules: [
-			{ test: /\.jsx?$/,
-			  include: [
-  		  		path.resolve(__dirname, "lib")
-			  ],
-			  loader: 'eslint-loader',
-			  exclude: /node_modules/ }
+			{
+				test: /\.jsx?$/,
+				include: [
+					path.resolve(__dirname, "lib")
+				],
+				loader: 'eslint-loader',
+				exclude: /node_modules/ }
 		]
 	}
 }
