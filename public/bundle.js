@@ -1138,138 +1138,163 @@ module.exports = remove;
 /* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(module, __filename) {const util = __webpack_require__(1);
-const config = __webpack_require__(2);
+/* WEBPACK VAR INJECTION */(function(module, __filename) {const util = __webpack_require__( 1 );
+const config = __webpack_require__( 2 );
 
-if ( __webpack_require__.c[__webpack_require__.s] === module){ throw new Error( util.format(config.err.req, __filename) )};
+if ( __webpack_require__.c[__webpack_require__.s] === module ) {
+	throw new Error( util.format( config.err.req, __filename ) );
+}
 
-function overwrite (newData) {
-    if (!(Array.isArray(newData))) {
-       throw new Error('Wrong typeof parameter in update method . Should be an array.');
-    } 
-    this.data = newData;
-    return this;
-};
+function overwrite( newData ) {
+	if ( !( Array.isArray( newData ) ) ) {
+		throw new Error( 'Wrong typeof parameter in update method . Should be an array.' );
+	}
+	this.data = newData;
+	return this;
+}
 
-module.exports = overwrite; 
+module.exports = overwrite;
+
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)(module), "/index.js"))
 
 /***/ }),
 /* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(module, __filename) {const util = __webpack_require__(1);
-const config = __webpack_require__(2);
+/* WEBPACK VAR INJECTION */(function(module, __filename) {const util = __webpack_require__( 1 );
+const config = __webpack_require__( 2 );
 
-if ( __webpack_require__.c[__webpack_require__.s] === module){ throw new Error( util.format(config.err.req, __filename) )};
+if ( __webpack_require__.c[__webpack_require__.s] === module ) {
+	throw new Error( util.format( config.err.req, __filename ) );
+}
 
-function get (key, id) {
-    var leng = this.getLength(), 
-        data = this.data, i;
-    for (i = 0; i < leng; i++) {
-      if(data[i][key] === id) return data[i];   
-    }
-    return null;
-};
+function get( key, id ) {
+	var leng = this.getLength(),
+		data = this.data,
+		i;
+	for ( i = 0; i < leng; i++ ) {
+		if ( data[ i ][ key ] === id ) {
+			return data[ i ];
+		}
+	}
+	return null;
+}
 
 module.exports = get;
+
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)(module), "/index.js"))
 
 /***/ }),
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(module, __filename) {const util = __webpack_require__(1);
-const config = __webpack_require__(2);
+/* WEBPACK VAR INJECTION */(function(module, __filename) {const util = __webpack_require__( 1 );
+const config = __webpack_require__( 2 );
 
-if ( __webpack_require__.c[__webpack_require__.s] === module){ throw new Error( util.format(config.err.req, __filename) )};
+if ( __webpack_require__.c[__webpack_require__.s] === module ) {
+	throw new Error( util.format( config.err.req, __filename ) );
+}
 
+function set( key, id, obj ) {
+	var target = this.get( key, id );
 
-function set(key, id, obj) {
-  var target = this.get(key, id); 
-    
-    if (!target) return this; 
-    Object.assign(target, obj);
-    return this;
-};
+	if ( !target ) {
+		return this;
+	}
+	Object.assign( target, obj );
+	return this;
+}
 
 module.exports = set;
+
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)(module), "/index.js"))
 
 /***/ }),
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(module, __filename) {const util = __webpack_require__(1);
-const config = __webpack_require__(2);
+/* WEBPACK VAR INJECTION */(function(module, __filename) {const util = __webpack_require__( 1 );
+const config = __webpack_require__( 2 );
 
-if ( __webpack_require__.c[__webpack_require__.s] === module){ throw new Error( util.format(config.err.req, __filename) )};
+if ( __webpack_require__.c[__webpack_require__.s] === module ) {
+	throw new Error( util.format( config.err.req, __filename ) );
+}
 
-function replace (key, id, obj) {
-    var hasOwn = Object.prototype.hasOwnProperty, 
-        target = this.get(key, id);
-    
-    if (!target) return this;
-    
-    for (var prop in target) {
-        if (hasOwn.call(target, prop)) delete target[prop];
-    }
-    
-    Object.assign(target, obj);
-    
-    return this;
-};
+function replace( key, id, obj ) {
+	var hasOwn = Object.prototype.hasOwnProperty,
+		target = this.get( key, id );
+
+	if ( !target ) {
+		return this;
+	}
+
+	for ( var prop in target ) {
+		if ( hasOwn.call( target, prop ) ) {
+			delete target[ prop ];
+		}
+	}
+
+	Object.assign( target, obj );
+
+	return this;
+}
 
 module.exports = replace;
+
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)(module), "/index.js"))
 
 /***/ }),
 /* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(module, __filename) {const util = __webpack_require__(1);
-const config = __webpack_require__(2);
+/* WEBPACK VAR INJECTION */(function(module, __filename) {const util = __webpack_require__( 1 );
+const config = __webpack_require__( 2 );
 
-if ( __webpack_require__.c[__webpack_require__.s] === module){ throw new Error( util.format(config.err.req, __filename) )};
+if ( __webpack_require__.c[__webpack_require__.s] === module ) {
+	throw new Error( util.format( config.err.req, __filename ) );
+}
 
-
-function getvalues (key) {
-      var leng = this.getLength(), 
-        data = this.data, i,
-        values = [];  
-    for (i = 0; i < leng; i++) {
-      values.push(data[i][key]);   
-    }
-    return values;
-};
+function getvalues( key ) {
+	var leng = this.getLength(),
+		data = this.data,
+		i,
+		values = [];
+	for ( i = 0; i < leng; i++ ) {
+		values.push( data[ i ][ key ] );
+	}
+	return values;
+}
 
 module.exports = getvalues;
+
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)(module), "/index.js"))
 
 /***/ }),
 /* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(module, __filename) {const util = __webpack_require__(1);
-const config = __webpack_require__(2);
+/* WEBPACK VAR INJECTION */(function(module, __filename) {const util = __webpack_require__( 1 );
+const config = __webpack_require__( 2 );
 
-if ( __webpack_require__.c[__webpack_require__.s] === module){ throw new Error( util.format(config.err.req, __filename) )};
-
-
-function sort (key) {
-    var order = 1;
-    if(key.charAt(0) === "-") {
-        order = -1;
-        key = key.substr(1);
-    }
-    this.data.sort(function (a,b) {
-        var result = (a[key] < b[key]) ? -1 : (a[key] > b[key]) ? 1 : 0;
-        return result * order;
-    })
-    return this;
+if ( __webpack_require__.c[__webpack_require__.s] === module ) {
+	throw new Error( util.format( config.err.req, __filename ) );
 }
 
-module.exports = sort; 
+function sort( key ) {
+	var order = 1;
+	if ( key.charAt( 0 ) === '-' ) {
+		order = -1;
+		key = key.substr( 1 );
+	}
+	this.data.sort( ( a, b ) => {
+		var result = ( a[ key ] < b[ key ] ) ? -1 : ( a[ key ] > b[ key ] ) ? 1 : 0;
+		return result * order;
+	} );
+	return this;
+}
+
+module.exports = sort;
+
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)(module), "/index.js"))
 
 /***/ })
